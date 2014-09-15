@@ -66,10 +66,15 @@ Cuota Promedio = $6389.796
 El sistema debería
 ===========
 Lado Publico:
-1. No permitir que se introduzcas un valor superior al maximo a financiar segun el modelo 
-2. Permitir la seleccion de cuotas (12, 24 y 36)
+
+1. No permitir que se introduzcas un valor superior al maximo a financiar segun el modelo.
+
+2. Permitir la seleccion de cuotas (12, 24 y 36).
+
 3. Luego de presionar "Calcular" debería Mostrar el valor de la cuota promedio.
+
 Lado Adminitracion:
+
 1. Ingresar los coheficientes que varian mensualmente.
 
 
