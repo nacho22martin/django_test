@@ -1,0 +1,16 @@
+#wrapper3 {
+  width: auto;
+  height: 100%;
+  margin-bottom: 2em;
+  margin-top: 15%;
+
+
+  /*margin: -156px 0 0 -277px;*/
+  overflow: hidden;
+  box-shadow: 0 0 30px #333;
+}
+.carousel3 img {
+  display: block;
+  width: 100%;
+  float: left;
+}

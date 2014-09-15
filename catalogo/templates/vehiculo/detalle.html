@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset='UTF-8'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Augusto Rubio Motors | Usados</title>
+
+    <!-- Bootstrap -->
+
+{% load staticfiles %}
+{% load humanize %}
+<link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/fonts.css" %}" rel="stylesheet" media="screen">
+
+<link href="{% static "css/style.css" %}" rel="stylesheet" media="screen">
+<link href="{% static "css/carousel_detalle.css" %}" rel="stylesheet" media="screen">
+<script src="{% static "js/jquery-1.8.3.js" %}"></script>
+
+</head>
+<body>
+{% load vehiculo_extras %}
+
+<div class = "container">
+  <div class ="col-md-12">
+  <a href="#" style="float:right;">X</a>
+</div>
+</div>
+<div class = "container" id="content">
+  <div class="col-md-7">
+    <div id="carousel-wrapper" class="pat-carousel">
+      <div id="carousel">
+        {% for image in vehiculo|getimages %}
+          <img src="/media/{{ image }}"  width="500" height="400" alt="{{forloop.counter}}" />
+        {% endfor %}
+      </div>
+      
+      <div id="carousel-thumbnails"> 
+        {% for image in vehiculo|getimages %}
+        <img src="/media/{{ image }}"  width="100" height="100" alt="{{forloop.counter}}" />
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">  
+    <h1 style="color:white;"><strong>{{ vehiculo.titulo }}</strong></h1>
+    <a class="btn btn-default navbar-btn" href="/contact?vehiculo={{ vehiculo.id }}">Precio $ {{ vehiculo.precio|intcomma }}</a>
+    <p style="font-size:1.5em; color:white;">{{ vehiculo.ano }} | {{ vehiculo.kilometros }} Km | {{ vehiculo.combustible }} </p>
+    <div id="detalle" class="container" style="margin-bottom: 2em; width:100%; color:white; padding-left:0;">
+    {% for title, specs in vehiculo|getspecs %}              
+        <h3>{{ title }}</h3>
+        <ul>
+        {% for spec in specs %}
+            <li>{{ spec }}</li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    </div>
+    <p style="font-size:1.5em; color:white; margin-bottom: 1em; font-style: italic;">Financiación con DNI como único requisito, hasta 60 cuotas. Fijas y en pesos! </p>
+
+    <a href="/contact?vehiculo={{ vehiculo.id }}"><img src="{% static "img/message.png" %}" style="margin-right: 1em;"></i>CONTACTAR</a>
+
+
+  </div>
+</div>
+	
+</body>
+</html>

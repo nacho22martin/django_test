@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block header %}
+            <ul class="collapse navbar-collapse bs-navbar-collapse nav navbar-nav">
+            <li>
+            <a href="/vehiculo" >Inicio</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/about">AR Motors</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li class="active">
+            <a href="#">Servicios</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/busqueda">Usados</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/contact">Contacto</a>
+            </li>        
+          </ul>
+  {% endblock %}
+  {% block content %}
+  
+  <div class="bs-header">
+      <div class="container" id="about"> 
+        <div class="row">
+          <h3>SERVICIOS</h3>
+        </div>
+        
+      </div>
+  </div>  
+  <div class="container" style="margin-top: 1em;">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="container" id="aboutcontainer">
+          <div class="row aboutright" >
+            <h1 style="margin-top:0;">SISTEMA DE VENTA POR CONSIGNACIÓN SVC</h1>
+          </div>
+          <div class="container" style="min-height:8em; width:100%;">
+            <img src="{% static "img/servicios_2.png" %}" alt="Responsive image" class="img-responsive"  border="0" align="middle"/>
+          </div>
+            <p><strong>1- PRESENTACION DE LA UNIDAD:</strong></br></br>
+            El cliente lleva la unidad a la concesionaria para que se le realice un peritaje ocular y mecánico al vehículo.</br></br>
+            <strong>2- ASIGNACION DEL PRECIO DE MERCADO Y COMISION POR GESTION:</strong></br></br>
+            Análisis del valor de mercado del vehículo y asignación del mismo. Además, la fijación de la comisión por la gestión de venta. </br></br>
+            <strong>3- GESTION DE VENTA :</strong></br></br>
+            <i>Uso de todas las herramientas de venta, tales como :</i></br></br>
+            - Financiación con DNI como único requisito por intermedio de bancos de primera línea</br>
+            - Toma de vehiculos de menor valor</br>
+            - Excelente ubicación</br>
+            - Excelentes instalaciones</br>
+            - Estacionamiento propio</br>
+            - Experiencia y seriedad</br></br>
+            <i>Uso de las herramientos de difusión:</i></br></br>
+            - Publicación en todos los sitios web a nivel local y nacional ( Córdoba vende, Mercado Libre, Deautos, La Voz Online</br>
+            - Uso de plataformas virtuales ( face,twitter, etc.)</br></br>
+            <strong>4- FINALIZACION DEL NEGOCIO: </strong></br></br>
+            - Venta concretada: cobro y liquidación de los fondos pactados al consignatario.</br>
+            - Entrega de la unidad al nuevo comprador ( Transferida y asegurada).</br>
+          </p>
+          <!-- campo de texto de quines somos -->
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="container" id="aboutcontainer">
+          <div class="row aboutright">
+              <h1 style="margin-top: 0;">EFECTIVO INMEDIATO</h1>
+        </div>
+        <p style="padding-bottom: 1em; padding-top: 1em;">Necesitas invertir tu auto en algún</br> proyecto personal?</br></p> 
+        <p style="padding-top: 0em;"><strong>AR Motors</strong> te compra tu vehículo en el </br> acto y de contado.    
+        </p>
+        
+         <div class="row aboutright">
+          <p style="margin-top: 0; padding: 0;font-size: 1.5em;line-height: 1em;">Querés subir de modelo o cambiar a un 0Km? </p></br>
+
+              <h1 style="margin-top: 0;">AUGUSTO RUBIO MOTORS TE DA LA SOLUCIÓN</h1>
+         </div> 
+         <div class="container" style="min-height:6em; width:100%;">
+        <img src="{% static "img/auto.png" %}" alt="Responsive image" class="img-responsive"  border="0" align="middle" style="padding-left: 1em;"/>
+        </div>
+              <p>Si necesitas vender tu auto y no podes por falta de tiempo, inseguridad, imposibilidad de realizar una venta al contado, inexperiencia en técnicas de negociación o falta de información, en <strong>AR Motors</strong> contamos con las siguientes herramientas que nos permiten realizar una venta de mantera rápida y efectiva:                    
+                <ul id="serv_bull">
+                  <li>Financiación con DNI. Hasta 60 cuotas fijas en pesos</li>
+                  <li>Recibimos vehículos de menor valor al mejor precio del mercado</li>
+                  <li>Estacionamiento propio</li>                      
+                  <li>Amplia cartera de clientes</li>
+                  <li>Local con 250 m. de superficie de exhibición en una excelente ubicación</li>   
+                </ul>
+            </p>
+      </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

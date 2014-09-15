@@ -1,0 +1,8 @@
+{
+  "name": "augustorubio",
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "plone-mockup": "https://github.com/plone/mockup.git"
+  }
+}

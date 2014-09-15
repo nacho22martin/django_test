@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% block js %}
+
+{% endblock %}
+
+ {% block header %}
+            <ul class="collapse navbar-collapse bs-navbar-collapse nav navbar-nav">
+            <li>
+            <a href="/vehiculo" >Inicio</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li class="active">
+            <a href="#">AR Motors</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/servicios">Servicios</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/busqueda">Usados</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/contact">Contacto</a>
+            </li>        
+          </ul>
+  {% endblock %}
+  {% block content %}
+    <div class="bs-header">
+       <div class="container" id="about" style="">    
+        <div class="row">        
+            <h3>QUIENES SOMOS</h3>
+        </div>
+      </div>  
+    </div>
+    <div class="container">
+        <div id="about-main" class="row" style="margin-right: 0;margin-left: 0;">
+            <div class="row">
+            <div class="col-md-12">                
+                <img src="{% static "img/quienes.png" %}" alt="Responsive image" class="img-responsive"  border="0"  style="margin-left: auto;margin-right: auto;"/>
+               <!-- <img src="{% static "img/quienes3.jpg" %}" alt="Responsive image" class="img-responsive"  border="0" style="margin-left: auto;margin-right: auto;"/>
+                <img src="{% static "img/quienes2.jpg" %}" alt="Responsive image" class="img-responsive"  border="0" style="margin-left: auto;margin-right: auto;"/>-->
+                            
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12" style="margin-top:2em;">
+                <p> <strong>AUGUSTO RUBIO MOTORS</strong> es una empresa dedicada a la venta y comercialización de vehículos usados seleccionados teniendo como eje principal el servicio al cliente y la satisfacción de sus necesidades. 
+                La propuesta de valor de Augusto Rubio Motors es poder acercarle al cliente los mejores usados de la plaza, ya que si se encuentran en el salón de venta de nuestra agencia es porque han cumplido con un exhaustivo peritaje con toda la tecnología disponible.  
+                Para cumplir dicho objetivo contamos con las siguientes herramientas: toma de usados de menor valor como parte de pago, financiación con DNI como único requisito por intermedio de bancos de primera línea, asesoramiento a domicilio, peritajes exhaustivos sobre las unidades.
+                </p>
+            </div>
+            </div>
+        </div>
+
+    </div>
+  {% endblock %}

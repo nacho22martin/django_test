@@ -1,0 +1,43 @@
+@font-face{
+   font-family: "PFDinTextCondPro-Bold";
+   src: url("din.Fonts/PFDinTextCondPro-Bold.ttf") format("truetype");
+   src: url("din.Fonts/PFDinTextCondPro-Bold.woff") format("woff");
+   }
+@font-face{
+   font-family: "PFDinTextCondPro-Light";
+   src: url("din.Fonts/PFDinTextCondPro-Light.ttf") format("truetype");
+   src: url("din.Fonts/PFDinTextCondPro-Light.woff") format("woff");
+   }
+
+@font-face{
+   font-family: "PFDinTextCondPro-Medium";
+   src: url("din.Fonts/PFDinTextCondPro-Medium.ttf") format("truetype");
+   src: url("din.Fonts/PFDinTextCondPro-Medium.woff") format('woff');
+   }
+
+@font-face{
+   font-family: "PFDinTextPro-Light";
+   src: url("din.Fonts/PFDinTextPro-Light.ttf") format("truetype");
+   src: url("din.Fonts/PFDinTextPro-Light.woff") format('woff');
+}
+/*@font-face{
+   font-family: "PFDinTextCondPro-BoldItalic";
+   src: url("din.Fonts/PFDinTextCondPro-BoldItalic.ttf") format("truetype");
+   }
+@font-face{
+   font-family: "PFDinTextCondPro-Italic";
+   src: url("din.Fonts/PFDinTextCondPro-Italic.ttf") format("truetype");
+   }
+@font-face{
+   font-family: "PFDinTextCondPro-LightItalic";
+   src: url("din.Fonts/PFDinTextCondPro-LightItalic.ttf") format("truetype");
+   }
+@font-face{
+   font-family: "PFDinTextCondPro-MediumItalic";
+   src: url("din.Fonts/PFDinTextCondPro-MediumItalic.ttf") format("truetype");
+}
+@font-face{
+   font-family: "PFDinTextPro-Regular";
+   src: url("din.Fonts/PFDinTextPro-Regular.ttf") format("truetype");
+}
+   */

@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+  {% block header %}
+            <ul class="collapse navbar-collapse bs-navbar-collapse nav navbar-nav">
+            <li>
+            <a href="/vehiculo" >Inicio</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/about">AR Motors</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/servicios">Servicios</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li  class="active">
+            <a href="#">Usados</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/contact">Contacto</a>
+            </li>        
+          </ul>
+  {% endblock %}
+
+  {% block content %}
+  <div class="bs-header">
+        <div class="container" id="advancesearch">    
+        <div class="row">
+          <h3>BUSCADOR</h3>
+          <form action="#" id="busquedadv" name="busquedadv">
+            
+            <ul>        
+              
+              <li>
+                <select name="marca" class="form-control">
+                    <option value="0">Marca</option>
+                    {% for marca in marcas %}
+                        <option value="{{marca.0}}">{{marca.1}}</option>
+                    {% endfor %}
+                </select>
+              </li>
+              <li>
+                <select name="modelo__icontains" class="form-control">
+                    <option value="0">Modelo</option>
+                    {% for modelo in modelos %}
+                        <option value="{{modelo}}">{{modelo}}</option>
+                    {% endfor %}
+                </select>
+              </li>
+              <li>
+                <select name="ano" class="form-control">
+                    <option value="0">Año</option>
+                    {% for ano in anos %}
+                        <option value="{{ano}}">{{ano}}</option>
+                    {% endfor %}
+                </select>
+              </li>                
+              <li>
+                <select name="kilometros" class="form-control">
+                    <option value="0">KM</option>
+                    {% for km in kms %}
+                        <option value="{{km}}">{{km}}</option>
+                    {% endfor %}
+                </select>
+              </li>     
+              <li>
+                <select name="color" class="form-control">
+                    <option value="0">Color</option>
+                    {% for color in colores %}
+                        <option value="{{color}}">{{color}}</option>
+                    {% endfor %}
+                </select>
+              </li>    
+              <li>
+                <select name="combustible" class="form-control">
+                    <option value="0">Combustible</option>
+                {% for combustible in combustibles %}
+                    <option value="{{combustible.0}}">{{combustible.1}}</option>
+                {% endfor %}
+                </select>                
+              </li> 
+              <li><input type="submit" class="btn btn-default navbar-btn" value="Buscar"></li>
+              </form>
+              <li><form action="#">
+              <input type="submit" class="btn btn-default navbar-btn" value="Ver Todos">  
+              </form></li>
+            </ul> 
+              
+        </div>
+      </div>
+    </div>    
+      <div class="container" id="autos" style="margin-bottom: 2em;">
+        <div class="row">
+         <p style="margin-left:1em; color: #D6D6D6;font-family: PFDinTextCondPro-Light;">*Los vehículos cumplen con normativas de peritaje electrónico sujetas a excelencia en calidad</p>
+          <div class="col-md-12">
+            {% if results %}
+            {% for vehiculo in results %}
+              <div class="col-md-3" >            
+                <div class="container">
+                <a class="pat-modal" href="/vehiculo/{{ vehiculo.id }}"
+                 data-pat-modal='{"height": "90%",
+                                  "width": "90%",
+                                  "templateOptions": {
+                                      "loadLinksWithinModal": false
+                                    }
+                                  }'>
+                  <img src="/media/{{ vehiculo.imagen_catalogo }}" class="img-responsive" alt="Responsive image">
+                   <ul>
+                    <li>
+                      <h3> {{ vehiculo.marca }} </h3>
+                    </li>
+                    <li style="min-height: 3em;">
+                      <button type="button" class="btn btn-default navbar-btn"><strong> $ {{ vehiculo.precio }} </strong></button>
+                    </li>
+                    <li>
+                      <p>{{ vehiculo.ano }} | {{ vehiculo.kilometros }} km </br></p>
+                    </li> 
+                  </ul>
+                </a>
+                 </div>                     
+                </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-md-3" > 
+              <h4>No hay resultados</h4>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+
+  {% endblock %}

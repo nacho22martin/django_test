@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+ {% block header %}
+            <ul class="collapse navbar-collapse bs-navbar-collapse nav navbar-nav">
+            <li>
+            <a href="/vehiculo" >Inicio</a>
+            </li>
+            <li>
+            <p>|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/about">AR Motors</a>
+            </li>
+            <li>
+            <p>|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/servicios">Servicios</a>
+            </li>
+            <li>
+            <p>|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/busqueda">Usados</a>
+            </li>
+            <li>
+            <p>|</p>
+            </li>
+            <li class="active">
+            <a href="#">Contacto</a>
+            </li>        
+          </ul>
+  {% endblock %}
+{% block content %}
+  <div class="bs-header">
+      <div class="container" id="about"> 
+        <div class="row">
+          <h3>CONTACTO</h3>
+        </div>
+        
+      </div>
+  </div>  
+<div class = "container" id="contact">
+ <div class="col-md-12"> 
+  <form action="." method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {{ form.as_p }}
+    <p> <strong>Por favor detalle que tipo de operación desea realizar:</br> cambio de usado, compra de 0KM, etc </strong></p>
+    <input style="font-size: 1.5em;" type="submit" value="Enviar" />
+
+  </form>
+ </div>
+ <!--<div class="col-md-6"> 
+  <!--<img src="{% static "img/agusto-muestras.jpeg" %}" alt="Responsive image" class="img-responsive"  border="0" align="middle"/>
+
+ </div>-->
+
+</div>
+{% endblock %}

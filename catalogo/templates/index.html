@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load humanize %}
+{% block js %}
+
+<script src="{% static "js/myjs.js" %}"></script>
+
+{% endblock %}
+
+ {% block header %}
+            <ul class="collapse navbar-collapse bs-navbar-collapse nav navbar-nav">
+            <li class="active">
+              
+            <a href="/vehiculo" >Inicio</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/about">AR Motors</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/servicios">Servicios</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/vehiculo/busqueda">Usados</a>
+            </li>
+            <li >
+            <p class="mediasize">|</p>
+            </li>
+            <li>
+            <a href="/contact">Contacto</a>
+            </li>        
+          </ul>
+  {% endblock %}
+  {% block content %}
+    <div class="bs-header">
+        <div class="container">  
+          <div id="wrapper" class="hidden-xs">
+            <div id="images-wrapper">
+              <div id="images">                
+                <img src="{% static "img/slider/imagendos.jpg" %}" class="img-responsive" alt="Responsive image" height="352" border="0"/>
+                <img src="{% static "img/slider/imagenuno.png" %}" class="img-responsive" alt="Responsive image" height="352" border="0"/>
+                {% if destacado %}
+                    <div id="destacado" class="container">
+                    <div class="row">
+                        <h2><strong>{{ destacado.0.titulo_destacado.upper }}</strong></br>
+                        {{ destacado.0.modelo.upper }}</h2> 
+                    </div> 
+                    <div class="row">
+                        <h3><a href="/"></a>${{ destacado.0.precio|intcomma }}</h3>
+                        <p>{{ destacado.0.ano }} </br>{{ destacado.0.kilometros }} Km</p>                   
+                    </div>
+                    <div class="row">
+                           <a class="pat-modal btn btn-default" href="/vehiculo/{{ destacado.0.id }}"
+                               data-pat-modal='{"height": "90%",
+                                                "width": "90%",
+                                                "templateOptions": {
+                                                    "loadLinksWithinModal": false
+                                                  }
+                                                }'>
+                             Ver más
+                            </a>
+                    </div>
+                    </div>            
+                {% endif %}
+              </div>
+            </div>
+            <div id="texts-wrapper">
+            <div id="texts">
+              <div>
+                <div class="container consignacion">
+                <div>
+                  <h2>AUTOS USADOS </br><strong>SEMI NUEVOS</strong> </h2>
+                  <img src="{% static "img/logo_azul.png" %}" class="img-responsive" alt="Responsive image" style="margin-top: 10%; text-align:center; display: inline;">
+                </div>
+              </div>       
+              </div>
+              <div>
+                <div class="container">
+                
+                  <h3>SISTEMA DE VENTA POR <strong>CONSIGNACIÓN SVC</strong></br> </h3>  
+                  <button type="button" class="btn btn-default" align:"middle" onclick="location.href='servicios';" style="float: left;">+ Ver más</button>             
+                  
+                </div>  
+
+              </div>
+              {% if destacado %}
+              <div>
+                <div class="container consignacion">
+                 <img id="destaca" src="/media/{{ destacado.0.imagen_catalogo }}" style="margin-top:-0; margin-bottom:0";>                
+                 <!--<button type="button" class="btn btn-default" align:"middle" onclick="location.href='servicios';" >+ Ver más</button>-->
+
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+    <div class="container">
+    <img src="{% static "img/sombra.png" %}"  class="img-responsive hidden-xs" alt="Responsive image" style="margin-top: 0.2em; width: 100%;">
+    </div>
+    <div class="container" id="quicksearch">    
+      <div class="row">
+        <form action="busqueda" id="busqueda" name="busqueda">
+        <ul>
+          <li><h3>BUSCADOR RÁPIDO</h3></li>
+          <li>
+            <select name="marca" class="form-control">
+                  <option value="0">Todos</option>
+                  {% for marca in marcas %}
+                      <option value="{{marca.0}}">{{marca.1}}</option>
+                  {% endfor %}
+            </select>
+          </li>
+          <!--<li><input type="text" class="form-control" name="marca__icontains" title="Marca que deséa" placeholder="Marca"> </li>-->
+          <li>
+              <select name="modelo__icontains" class="form-control">
+                <option value="">Todos</option>
+                {% for modelo in modelos %}
+                    <option value="{{modelo}}">{{modelo}}</option>
+                {% endfor %}
+              </select>
+          </li>
+          <!--<li><input type="text" class="form-control" name="modelo__icontains" placeholder="Modelo"> </li>   -->
+
+          <li><input type="submit" class="btn btn-default navbar-btn" title="Modelo que deséa" value="Buscar"></li>   
+        </ul>
+        </form>          
+      </div>
+    </div>  
+
+    <div class="container" id="autos" style="margin-bottom: 2em;">
+      <div class="row">
+        <p style="margin-left:1em; color: #D6D6D6;font-family: PFDinTextCondPro-Light;">*Los vehículos cumplen con normativas de peritaje electrónico sujetas a excelencia en calidad</p>
+        <div class="col-md-12">
+          {% if results %}
+          {% for vehiculo in results %}
+            <div class="col-md-3" >            
+              <div class="container" id="{{ vehiculo.id }}">
+              <a class="pat-modal" href="/vehiculo/{{ vehiculo.id }}"
+                 data-pat-modal='{"height": "90%",
+                                  "width": "90%",
+                                  "templateOptions": {
+                                      
+                                      "loadLinksWithinModal": false
+
+                                    }
+                                  }'>
+                <img src="/media/{{ vehiculo.imagen_catalogo }}" class="img-responsive" alt="Responsive image">
+                 <ul>
+                  <li>
+                    <h3> {{ vehiculo.marca }} </h3>
+                  </li>
+                  <li style="min-height: 3em;">
+                    <button type="button" class="btn btn-default navbar-btn"><strong>$ {{ vehiculo.precio|intcomma }} </strong></button>
+                  </li>
+                  <li>
+                    <p>{{ vehiculo.ano }} | {{ vehiculo.kilometros }} km </br>{{ vehiculo.modelo }}</p>
+                  </li> 
+                </ul>
+              </a>
+               </div>                     
+              </div>
+          {% endfor %}
+          {% else %}
+            <div class="col-md-3" > 
+              <h4>No hay resultados</h4>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+

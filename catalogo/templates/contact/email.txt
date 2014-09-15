@@ -1,0 +1,7 @@
+Enviado por: {{ name }}
+Email: {{ email }}
+Telefono: {{ phone }}
+
+Mensaje:
+  
+{{ message }}

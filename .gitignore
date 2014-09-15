@@ -1,0 +1,9 @@
+*.pyc
+database.db
+media/
+bin/
+include/
+lib/
+catalogo/static/mockup/bower_components
+catalogo/static/mockup/node_modules
+
